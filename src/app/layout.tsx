@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SEO_METADATA.siteUrl),
   title: {
     default: SEO_METADATA.title,
-    template: "%s | Ujjwal Bansal — Senior Android Developer"
+    template: "%s | Ujjwal Bansal — Native Android Developer"
   },
   description: SEO_METADATA.description,
   keywords: SEO_METADATA.keywords,
@@ -26,10 +26,7 @@ export const metadata: Metadata = {
     telephone: false
   },
   alternates: {
-    canonical: SEO_METADATA.siteUrl,
-    types: {
-      "application/rss+xml": `${SEO_METADATA.siteUrl}/feed.xml`
-    }
+    canonical: SEO_METADATA.siteUrl
   },
   openGraph: {
     title: SEO_METADATA.title,
@@ -40,10 +37,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+        url: "https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?q=80&w=1200&auto=format&fit=crop",
         width: 1200,
         height: 630,
-        alt: "Ujjwal Bansal — Senior Android Developer Portfolio"
+        alt: "Ujjwal Bansal — Native Android Developer Portfolio"
       }
     ]
   },
@@ -51,8 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SEO_METADATA.title,
     description: SEO_METADATA.description,
-    creator: "@ujjwalbansal",
-    images: ["https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop"]
+    images: ["https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?q=80&w=1200&auto=format&fit=crop"]
   },
   robots: {
     index: true,
@@ -81,7 +77,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth dark">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="alternate" type="application/rss+xml" title="Ujjwal Bansal Blog RSS" href="/feed.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
@@ -99,7 +94,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(appsLd) }}
         />
       </head>
-      <body className="bg-[#050816] text-[#f3f4f6] font-sans antialiased min-h-screen selection:bg-cyan-500 selection:text-white">
+      <body className="bg-[#050816] text-[#f3f4f6] font-sans antialiased min-h-screen selection:bg-emerald-500 selection:text-white">
         <CursorSpotlight />
         {children}
       </body>

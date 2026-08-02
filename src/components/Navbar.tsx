@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { Command, Menu, X, FileDown, Sparkles } from "lucide-react";
+import { Command, Menu, X, FileDown, Smartphone } from "lucide-react";
 
 interface NavbarProps {
   onOpenCommandPalette: () => void;
@@ -19,12 +19,12 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ["hero", "about", "tech-stack", "projects", "timeline", "services", "open-source", "blog", "contact"];
+      const sections = ["hero", "about", "skills", "highlights", "projects", "experience", "contact"];
       const current = sections.find((section) => {
         const el = document.getElementById(section);
         if (el) {
           const rect = el.getBoundingClientRect();
-          return rect.top <= 120 && rect.bottom >= 120;
+          return rect.top <= 140 && rect.bottom >= 140;
         }
         return false;
       });
@@ -37,12 +37,10 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
 
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "Tech Stack", href: "#tech-stack" },
+    { name: "Skills", href: "#skills" },
+    { name: "Highlights", href: "#highlights" },
     { name: "Projects", href: "#projects" },
-    { name: "Timeline", href: "#timeline" },
-    { name: "Services", href: "#services" },
-    { name: "Open Source", href: "#open-source" },
-    { name: "Blog", href: "#blog" },
+    { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" }
   ];
 
@@ -50,7 +48,7 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#050816]/80 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl py-3"
+          ? "bg-[#050816]/90 backdrop-blur-xl border-b border-slate-800/80 shadow-2xl py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -59,24 +57,24 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
           
           {/* Logo & Brand Identity */}
           <Link href="#hero" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-purple-600 p-[1.5px] shadow-lg group-hover:shadow-cyan-500/25 transition-all">
-              <div className="w-full h-full bg-[#050816] rounded-[10px] flex items-center justify-center font-bold text-lg text-white font-mono group-hover:bg-[#0b0f29] transition-colors">
+            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-400 via-teal-500 to-cyan-500 p-[1.5px] shadow-lg group-hover:shadow-emerald-500/25 transition-all">
+              <div className="w-full h-full bg-[#050816] rounded-[10px] flex items-center justify-center font-bold text-lg text-emerald-400 font-mono group-hover:bg-[#0b0f29] transition-colors">
                 UB
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors font-mono text-base">
+              <span className="font-bold tracking-tight text-white group-hover:text-emerald-300 transition-colors font-mono text-base">
                 {PERSONAL_INFO.name}
               </span>
-              <span className="text-xs text-slate-400 font-sans tracking-wide flex items-center gap-1.5">
+              <span className="text-[11px] text-slate-400 font-sans tracking-wide flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                Senior Android Developer
+                Native Android Developer
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-950/40 p-1.5 rounded-full border border-slate-800/60 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-950/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
             {navLinks.map((link) => {
               const sectionId = link.href.replace("#", "");
               const isActive = activeSection === sectionId;
@@ -84,10 +82,10 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
+                  className={`px-4 py-1.5 text-xs font-mono rounded-full transition-all duration-200 ${
                     isActive
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md shadow-blue-500/20 font-semibold"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/50"
+                      ? "bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-bold shadow-md shadow-emerald-500/20"
+                      : "text-slate-300 hover:text-white hover:bg-slate-800/60"
                   }`}
                 >
                   {link.name}
@@ -101,19 +99,19 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
             {/* Command Palette Trigger */}
             <button
               onClick={onOpenCommandPalette}
-              className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-300 bg-slate-900/80 border border-slate-700/60 rounded-lg hover:border-cyan-500/50 hover:text-white transition-all shadow-inner"
+              className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-300 bg-slate-900/80 border border-slate-700/60 rounded-lg hover:border-emerald-500/50 hover:text-white transition-all shadow-inner"
               title="Open Command Palette (Ctrl+K)"
             >
-              <Command className="w-3.5 h-3.5 text-cyan-400" />
+              <Command className="w-3.5 h-3.5 text-emerald-400" />
               <span className="font-mono text-[11px] text-slate-400">Ctrl K</span>
             </button>
 
             {/* Resume Trigger */}
             <button
               onClick={onOpenResumeModal}
-              className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 rounded-lg shadow-lg shadow-cyan-500/15 hover:shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+              className="flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg shadow-lg shadow-emerald-500/15 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
-              <FileDown className="w-4 h-4" />
+              <FileDown className="w-4 h-4 text-slate-950" />
               Resume
             </button>
           </div>
@@ -124,7 +122,7 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
               onClick={onOpenCommandPalette}
               className="p-2 text-slate-300 bg-slate-900 border border-slate-800 rounded-lg"
             >
-              <Command className="w-4 h-4 text-cyan-400" />
+              <Command className="w-4 h-4 text-emerald-400" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -146,7 +144,7 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-slate-200 hover:text-cyan-400 py-2 border-b border-slate-800/40"
+                className="text-sm font-mono font-medium text-slate-200 hover:text-emerald-400 py-2 border-b border-slate-800/40"
               >
                 {link.name}
               </Link>
@@ -157,7 +155,7 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
                   setMobileMenuOpen(false);
                   onOpenResumeModal();
                 }}
-                className="w-full py-2.5 text-xs font-semibold text-center text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg shadow-md"
+                className="w-full py-2.5 text-xs font-mono font-bold text-center text-slate-950 bg-emerald-400 rounded-lg shadow-md"
               >
                 Download Resume
               </button>

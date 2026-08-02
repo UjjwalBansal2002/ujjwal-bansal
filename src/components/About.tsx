@@ -1,154 +1,114 @@
 "use client";
 
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { CheckCircle2, Cpu, Zap, Shield, Sparkles, Layers } from "lucide-react";
+import { CheckCircle2, Smartphone, Code2, Layers, Cpu, GitBranch, ShieldCheck, Terminal } from "lucide-react";
 
 export default function About() {
-  const corePillars = [
-    {
-      title: "Clean Architecture & Modularization",
-      description: "Decoupled feature-by-layer structures with strict domain models ensuring 100% unit testability and fast Gradle build caching.",
-      icon: Layers,
-      color: "from-blue-500 to-cyan-400"
-    },
-    {
-      title: "Jetpack Compose & 120 FPS UI",
-      description: "Zero-XML layouts with custom Canvas graphics, physics spring animations, and state stability optimization.",
-      icon: Zap,
-      color: "from-cyan-400 to-purple-500"
-    },
-    {
-      title: "Performance & Cold Launch Profiling",
-      description: "Elimination of memory leaks via LeakCanary, Baseline Profiles for ART Ahead-Of-Time compilation, and zero dropped scroll frames.",
-      icon: Cpu,
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      title: "Offline-First Resiliency",
-      description: "Robust data sync engines leveraging Room SQLite persistence, Coroutine Mutex locking, and Ktor/Retrofit interceptors.",
-      icon: Shield,
-      color: "from-emerald-400 to-teal-500"
-    }
+  const HIGHLIGHTS = [
+    "Convert UI designs into responsive Android layouts",
+    "Integrate secure REST APIs & JSON payloads",
+    "Build reusable Android components & custom views",
+    "Handle encrypted API responses (AES-CBC)",
+    "Implement Firebase Analytics & Meta App Events",
+    "Debug complex lifecycle & crash issues",
+    "Improve application performance & memory consumption",
+    "Develop complete multi-role user workflows",
+    "Collaborate in Agile teams using Git & GitHub",
+    "Maintain stable debug & release builds"
   ];
 
-  const techBadges = [
-    "Kotlin", "Java", "Jetpack Compose", "Coroutines & Flow", "Hilt / Dagger 2",
-    "Room Database", "Firebase Suite", "REST APIs & Ktor", "Retrofit", "MVVM & MVI",
-    "Material Design 3", "WorkManager", "Paging 3", "CameraX & ML Kit", "Unit & UI Testing"
+  const PLATFORMS_EXPERIENCE = [
+    { title: "Astrology Applications", desc: "Birth details picker, horoscopes, matchmaking, Panchang & subscriptions" },
+    { title: "AI Chat Experiences", desc: "Voice recognition via SpeechRecognizer & ElevenLabs Text-to-Speech" },
+    { title: "Multi-Role Vendor Platforms", desc: "Role-based flows for Vendors, Employees, Third-Parties & Customers" },
+    { title: "Career Assessment Systems", desc: "Multi-step paginated forms, validation, and AWS S3 document uploads" },
+    { title: "Customer Applications", desc: "Dynamic dashboards, glassmorphism UI, ViewPager2 carousels & bottom sheets" },
+    { title: "Astrologer Platforms", desc: "Availability toggles, pricing tiers, transaction logs & bank cheque uploads" }
   ];
 
   return (
-    <section id="about" className="py-24 relative z-20">
+    <section id="about" className="py-24 border-t border-slate-800/80 relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-400">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Engineering Philosophy</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-mono text-purple-400">
+            <Code2 className="w-3.5 h-3.5" />
+            <span>Developer Overview</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-mono tracking-tight">
-            Architecting Resilient Mobile Experiences
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            About Me
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Building software that feels like magic on the outside and runs like clockwork under the hood.
+            Engineering resilient, high-performance native Android applications with Kotlin, MVVM architecture, and production-grade integrations.
           </p>
         </div>
 
-        {/* Narrative & Profile Box */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Narrative */}
-          <div className="lg:col-span-7 space-y-6 text-slate-300">
-            <p className="text-lg leading-relaxed">
-              I am <strong className="text-white font-mono">{PERSONAL_INFO.name}</strong>, a Senior Android Developer & App Architect with over <span className="text-cyan-400 font-semibold">{PERSONAL_INFO.experienceYears} of hands-on experience</span> engineering mission-critical mobile software.
-            </p>
-            <p className="leading-relaxed">
-              My engineering philosophy revolves around <strong>Clean Code</strong>, <strong>Robust Architecture</strong>, and <strong>Relentless Performance Optimization</strong>. Whether it&apos;s eliminating micro-stutters during heavy list scrolling, implementing hardware-backed biometric encryption for FinTech apps, or modularizing legacy Android apps, I focus on delivering enterprise-grade quality.
-            </p>
-            <p className="leading-relaxed">
-              I believe that a truly great mobile application isn&apos;t just visually stunning — it must be memory-efficient, responsive under poor network conditions, and maintainable for engineering teams as the codebase grows to hundreds of thousands of lines.
-            </p>
+          {/* Left Column: Bio & Core Experience */}
+          <div className="lg:col-span-7 space-y-6">
+            
+            <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-6 shadow-2xl">
+              <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                <Smartphone className="w-6 h-6 text-emerald-400" />
+                Native Android Developer
+              </h3>
 
-            {/* Badges Grid */}
-            <div className="pt-4">
-              <h4 className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">Core Expertise & Frameworks:</h4>
-              <div className="flex flex-wrap gap-2">
-                {techBadges.map((badge, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300 hover:border-cyan-500/50 hover:bg-slate-800 transition-all"
-                  >
-                    {badge}
-                  </span>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                {PERSONAL_INFO.aboutBio}
+              </p>
+
+              <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+                <p className="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Current Employment</p>
+                <p className="text-sm font-semibold text-white">{PERSONAL_INFO.currentRole}</p>
+                <p className="text-xs text-slate-400">Working on production Android applications using Kotlin, XML, MVVM, and REST APIs since November 2025.</p>
+              </div>
+
+              {/* Core Strengths Grid */}
+              <div className="pt-2">
+                <h4 className="text-sm font-mono text-slate-300 font-bold uppercase mb-4 tracking-wider">
+                  Technical Execution Capabilities
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {HIGHLIGHTS.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Right Column: Multi-Domain Application Experience */}
+          <div className="lg:col-span-5 space-y-4">
+            
+            <div className="p-6 rounded-3xl bg-slate-900/60 border border-slate-800 space-y-4">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Layers className="w-5 h-5 text-purple-400" />
+                Real-World App Domains
+              </h3>
+              <p className="text-xs text-slate-400">
+                Experience building production modules across diverse domains and complex user requirements:
+              </p>
+
+              <div className="space-y-3">
+                {PLATFORMS_EXPERIENCE.map((domain, idx) => (
+                  <div key={idx} className="p-3.5 rounded-2xl bg-slate-950 border border-slate-800/80 hover:border-purple-500/30 transition-colors">
+                    <p className="text-xs font-bold text-emerald-300">{domain.title}</p>
+                    <p className="text-[11px] text-slate-400 mt-1">{domain.desc}</p>
+                  </div>
                 ))}
               </div>
+
             </div>
+
           </div>
 
-          {/* Right Highlights Card */}
-          <div className="lg:col-span-5">
-            <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-2xl relative overflow-hidden space-y-6">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 blur-2xl" />
-              
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-purple-600 p-0.5">
-                  <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center font-mono font-bold text-2xl text-cyan-400">
-                    UB
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white font-mono">{PERSONAL_INFO.name}</h3>
-                  <p className="text-xs text-slate-400 font-mono">{PERSONAL_INFO.title}</p>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-2 text-xs font-mono border-t border-slate-800">
-                <div className="flex justify-between py-1.5 border-b border-slate-800/60">
-                  <span className="text-slate-400">Primary Language:</span>
-                  <span className="text-emerald-400 font-bold">Kotlin 100%</span>
-                </div>
-                <div className="flex justify-between py-1.5 border-b border-slate-800/60">
-                  <span className="text-slate-400">UI Toolkit:</span>
-                  <span className="text-cyan-400 font-bold">Jetpack Compose</span>
-                </div>
-                <div className="flex justify-between py-1.5 border-b border-slate-800/60">
-                  <span className="text-slate-400">Architecture:</span>
-                  <span className="text-purple-400 font-bold">Clean Arch + MVI</span>
-                </div>
-                <div className="flex justify-between py-1.5">
-                  <span className="text-slate-400">Location / Status:</span>
-                  <span className="text-white font-bold">{PERSONAL_INFO.location}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {corePillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            return (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-all hover:bg-slate-900/90 group"
-              >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${pillar.color} p-0.5 mb-4 group-hover:scale-105 transition-transform`}>
-                  <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center text-white">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                </div>
-                <h4 className="text-lg font-bold text-white font-mono mb-2">
-                  {pillar.title}
-                </h4>
-                <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  {pillar.description}
-                </p>
-              </div>
-            );
-          })}
         </div>
 
       </div>

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { PROJECTS_DATA, BLOG_POSTS_DATA, PERSONAL_INFO } from "@/data/portfolioData";
-import { Search, X, FolderGit2, BookOpen, User, Send, FileDown, Sparkles, Command } from "lucide-react";
+import { PROJECTS_DATA, PERSONAL_INFO } from "@/data/portfolioData";
+import { Search, X, FolderGit2, User, Send, FileDown, Sparkles, Command } from "lucide-react";
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -34,9 +34,9 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
 
   const quickActions = [
     { title: "Download Resume", action: () => { onClose(); onOpenResumeModal(); }, icon: FileDown },
-    { title: "Hire Ujjwal Bansal", href: "#contact", icon: Send },
-    { title: "Explore 20+ Projects", href: "#projects", icon: FolderGit2 },
-    { title: "Read Engineering Blog", href: "#blog", icon: BookOpen }
+    { title: "Contact Ujjwal Bansal", href: "#contact", icon: Send },
+    { title: "View Featured Projects", href: "#projects", icon: FolderGit2 },
+    { title: "Explore Skills & Experience", href: "#about", icon: User }
   ];
 
   const matchingProjects = PROJECTS_DATA.filter((p) =>
@@ -45,24 +45,19 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
     p.techStack.some((t) => t.toLowerCase().includes(query.toLowerCase()))
   );
 
-  const matchingBlogs = BLOG_POSTS_DATA.filter((b) =>
-    b.title.toLowerCase().includes(query.toLowerCase()) ||
-    b.category.toLowerCase().includes(query.toLowerCase())
-  );
-
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-slate-950/80 backdrop-blur-xl animate-fadeIn">
       <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden space-y-4 p-4 sm:p-6">
         
         {/* Search Bar Input */}
         <div className="relative flex items-center border-b border-slate-800 pb-3">
-          <Search className="w-5 h-5 text-cyan-400 ml-2" />
+          <Search className="w-5 h-5 text-emerald-400 ml-2" />
           <input
             type="text"
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search projects, technologies, blog posts, or type a command..."
+            placeholder="Search projects, technologies, or type a command..."
             className="w-full px-3 py-2 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-mono"
           />
           <button onClick={onClose} className="p-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white">
@@ -85,9 +80,9 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
                         key={idx}
                         href={act.href}
                         onClick={onClose}
-                        className="p-3 rounded-xl bg-slate-950 border border-slate-800/80 hover:border-cyan-500/50 flex items-center gap-3 text-xs font-mono text-slate-200 transition-colors"
+                        className="p-3 rounded-xl bg-slate-950 border border-slate-800/80 hover:border-emerald-500/50 flex items-center gap-3 text-xs font-mono text-slate-200 transition-colors"
                       >
-                        <Icon className="w-4 h-4 text-cyan-400" />
+                        <Icon className="w-4 h-4 text-emerald-400" />
                         <span>{act.title}</span>
                       </Link>
                     );
@@ -96,9 +91,9 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
                     <button
                       key={idx}
                       onClick={act.action}
-                      className="p-3 rounded-xl bg-slate-950 border border-slate-800/80 hover:border-cyan-500/50 flex items-center gap-3 text-xs font-mono text-slate-200 transition-colors text-left"
+                      className="p-3 rounded-xl bg-slate-950 border border-slate-800/80 hover:border-emerald-500/50 flex items-center gap-3 text-xs font-mono text-slate-200 transition-colors text-left"
                     >
-                      <Icon className="w-4 h-4 text-cyan-400" />
+                      <Icon className="w-4 h-4 text-emerald-400" />
                       <span>{act.title}</span>
                     </button>
                   );
@@ -112,7 +107,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
             <div className="space-y-2">
               <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-2">Projects ({matchingProjects.length})</p>
               <div className="space-y-1">
-                {matchingProjects.slice(0, 5).map((project) => (
+                {matchingProjects.map((project) => (
                   <Link
                     key={project.id}
                     href="#projects"
@@ -120,27 +115,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
                     className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/60 hover:bg-slate-800/60 flex justify-between items-center text-xs font-mono text-white transition-colors"
                   >
                     <span>{project.title}</span>
-                    <span className="text-[10px] text-cyan-400">{project.category}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Matching Blogs Results */}
-          {matchingBlogs.length > 0 && (
-            <div className="space-y-2">
-              <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest px-2">Articles ({matchingBlogs.length})</p>
-              <div className="space-y-1">
-                {matchingBlogs.map((blog) => (
-                  <Link
-                    key={blog.slug}
-                    href={`/blog/${blog.slug}`}
-                    onClick={onClose}
-                    className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/60 hover:bg-slate-800/60 flex justify-between items-center text-xs font-mono text-white transition-colors"
-                  >
-                    <span>{blog.title}</span>
-                    <span className="text-[10px] text-purple-400">{blog.readTime}</span>
+                    <span className="text-[10px] text-emerald-400">{project.category}</span>
                   </Link>
                 ))}
               </div>

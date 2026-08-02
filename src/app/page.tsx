@@ -3,15 +3,11 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import StatsCounter from "@/components/StatsCounter";
 import About from "@/components/About";
 import TechStack from "@/components/TechStack";
+import EngineeringHighlights from "@/components/EngineeringHighlights";
 import Projects from "@/components/Projects";
 import Timeline from "@/components/Timeline";
-import Services from "@/components/Services";
-import OpenSource from "@/components/OpenSource";
-import Testimonials from "@/components/Testimonials";
-import BlogSection from "@/components/BlogSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CommandPalette from "@/components/CommandPalette";
@@ -32,32 +28,20 @@ export default function Home() {
       {/* Hero Section */}
       <Hero onOpenResumeModal={() => setResumeModalOpen(true)} />
 
-      {/* Stats Counter Bar */}
-      <StatsCounter />
-
       {/* About Section */}
       <About />
 
-      {/* Tech Stack Grid */}
+      {/* Technical Skills Section */}
       <TechStack />
 
-      {/* Projects Showcase (20+ Apps) */}
+      {/* Engineering Highlights / Problems I Solve */}
+      <EngineeringHighlights />
+
+      {/* Featured Projects Showcase */}
       <Projects />
 
-      {/* Timeline Section */}
+      {/* Experience & Education Timeline */}
       <Timeline />
-
-      {/* Services Section */}
-      <Services />
-
-      {/* Open Source & GitHub Section */}
-      <OpenSource />
-
-      {/* Testimonials Slider */}
-      <Testimonials />
-
-      {/* SEO Blog System Preview */}
-      <BlogSection />
 
       {/* Contact Section */}
       <Contact />
