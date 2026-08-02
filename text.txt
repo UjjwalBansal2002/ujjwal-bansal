@@ -1,0 +1,502 @@
+You are a senior Android Developer, frontend developer and personal-branding specialist.
+
+Redesign and optimize my existing developer portfolio website so that it looks premium, modern, professional and memorable to recruiters, startups and potential clients.
+
+My name is **Ujjwal Bansal**, and I am a **Native Android Developer with 1 years of hands-on Android development experience**. I currently work as an **Android Developer at AppSquadz Software Pvt. Ltd., Noida**, where I have been working since November 2025.
+
+My current portfolio is hosted at:
+
+`ujjwalbansaldev.vercel.app`
+
+Work with my existing codebase instead of unnecessarily changing the complete technology stack. Refactor and optimize the existing code wherever required.
+
+## Main Objective
+
+Create a high-quality Android developer portfolio that immediately communicates:
+
+* My Android development experience
+* My expertise in Kotlin and native Android development
+* My real-world project experience
+* My ability to build complete, production-ready Android applications
+* My API, Firebase, analytics and debugging knowledge
+* My clean-code and problem-solving abilities
+* My availability for Android developer roles, freelance projects and collaborations
+
+The final website should feel like the portfolio of an experienced mobile application developer rather than a generic template.
+
+## Design Direction
+
+Use a modern, premium and technology-focused design.
+
+Preferred visual characteristics:
+
+* Professional dark theme
+* Clean typography
+* Strong visual hierarchy
+* Subtle gradients
+* Glassmorphism used only where it improves the design
+* Smooth but lightweight animations
+* Android-inspired visual elements
+* Kotlin and Android branding accents
+* Attractive project cards
+* Clear call-to-action buttons
+* Spacious and responsive layouts
+* Premium hover effects
+* Mobile-first responsive design
+
+Avoid excessive animations, too many colors, cluttered sections, generic stock images and unnecessary decorative elements.
+
+The website should load quickly and remain easy to navigate.
+
+## Hero Section
+
+Create a powerful hero section using content similar to:
+
+“Hi, I’m Ujjwal Bansal”
+
+“Native Android Developer”
+
+“I build secure, scalable and user-focused Android applications using Kotlin, modern Android architecture and production-ready integrations.”
+
+Add prominent buttons:
+
+* View My Projects
+* Download Resume
+* Contact Me
+* View GitHub
+
+Include a subtle Android or mobile-development visual in the hero section.
+
+Add a small availability indicator such as:
+
+“Available for Android Developer Opportunities”
+
+Do not use fake client numbers, download counts, application ratings or achievements that are not provided.
+
+## About Me Section
+
+Present me as a Native Android Developer with four years of hands-on experience building Android applications using Kotlin, XML, REST APIs, Firebase and modern Android development practices.
+
+Mention that I have experience working on astrology applications, AI chat experiences, multi-role platforms, career-assessment systems, vendor applications, customer applications and astrologer platforms.
+
+Highlight my ability to:
+
+* Convert UI designs into responsive Android layouts
+* Integrate REST APIs
+* Build reusable Android components
+* Handle encrypted API responses
+* Implement Firebase and Meta analytics
+* Debug complex crashes
+* Improve application performance
+* Develop complete user workflows
+* Collaborate using Git and GitHub
+* Maintain stable debug and release builds
+
+Keep the writing confident, professional and concise.
+
+## Technical Skills Section
+
+Create visually attractive categorized skill groups.
+
+### Android Development
+
+* Kotlin
+* Android SDK
+* XML
+* Activities
+* Fragments
+* Android lifecycle
+* ViewBinding
+* Data Binding
+* RecyclerView
+* ViewPager2
+* Material Components
+* Custom Views
+* Bottom Sheets
+* Responsive Android UI
+* Deep Linking
+* Push Notifications
+* Multi-language Support
+
+### Architecture and Code Quality
+
+* MVVM
+* Modularization
+* Separation of Concerns
+* Reusable Components
+* Clean Code
+* Lifecycle-Safe Development
+* Application State Management
+
+### Networking and Data
+
+* Retrofit
+* OkHttp
+* Gson
+* REST APIs
+* JSON
+* Pagination
+* Multipart Upload
+* Secure API Integration
+* AES-CBC Decryption
+* SharedPreferences
+
+### Firebase and Analytics
+
+* Firebase Analytics
+* Firebase DebugView
+* Firebase Cloud Messaging
+* Firebase Crashlytics
+* Meta App Events
+* Custom Analytics Events
+* Purchase Tracking
+* Subscription Tracking
+
+### Libraries and Tools
+
+* Glide
+* Coil
+* Hilt
+* ExoPlayer
+* Android Media3
+* Google Maps
+* CameraX
+* SpeechRecognizer
+* ElevenLabs TTS
+* Git
+* GitHub
+* Gradle
+* ADB
+* Android Studio
+
+Use recognizable icons where suitable, but do not allow the icons to make the section visually crowded.
+
+## Featured Projects Section
+
+Create detailed and attractive cards for the following projects.
+
+### 1. ShivAI — AI Astrology Application
+
+Description:
+
+An AI-powered astrology and numerology Android application built using Kotlin. The application combines personalized astrology reports, numerology insights, voice-enabled AI chat, subscriptions and analytics.
+
+Key features:
+
+* OTP login and registration
+* Multi-step user onboarding
+* Date, time and place-of-birth selection
+* AI astrology chat
+* Android speech recognition
+* ElevenLabs text-to-speech
+* Subscription and chat-lock logic
+* Numerology reports
+* Matchmaking
+* Weekly astrology reports
+* Firebase Cloud Messaging
+* Notification deep linking
+* Firebase Analytics
+* Meta App Events
+* Purchase and subscription tracking
+* Multi-language support
+* Secure AES-encrypted API handling
+
+Technologies:
+
+Kotlin, XML, Retrofit, Firebase, Meta SDK, SpeechRecognizer, ElevenLabs, Glide and AES encryption.
+
+### 2. AP Astro — Customer Astrology Platform
+
+Description:
+
+A customer-facing astrology application that allows users to explore astrologers, create matchmaking profiles, view compatibility results and access personalized astrology services.
+
+Key features:
+
+* Authentication and onboarding
+* Astrologer listing
+* Matchmaking profiles
+* Compatibility APIs
+* Previous match records
+* Panchang and horoscope UI
+* Guna Milan meter
+* Product and store modules
+* Custom bottom navigation
+* Banner carousel
+* Secure API response handling
+* Lifecycle-safe UI updates
+
+Technologies:
+
+Kotlin, XML, MVVM, Retrofit, ViewPager2, Material Components, Glide and encrypted APIs.
+
+### 3. AP Astro Pandit — Astrologer Application
+
+Description:
+
+An Android application developed for astrologers to manage their availability, service pricing, profile information, banking information and earnings.
+
+Key features:
+
+* Astrologer registration
+* Online and offline toggle
+* Chat, audio and video pricing
+* Earnings and transactions
+* Bank and IFSC details
+* Cancelled-cheque upload
+* Profile management
+* Customer and session workflows
+* Empty-state handling
+* API-based profile completion
+
+Technologies:
+
+Kotlin, XML, Retrofit, ViewBinding, Material Components and image-upload APIs.
+
+### 4. RCentric Customer Application
+
+Description:
+
+A customer application featuring a premium glassmorphism-inspired Android interface.
+
+Key features:
+
+* Custom GlassView
+* Glassmorphism login interface
+* Multi-screen onboarding
+* Home dashboard
+* ViewPager2 banners
+* Dots indicator
+* Custom bottom navigation
+* Android-version-compatible blur effects
+
+Technologies:
+
+Kotlin, XML, Custom Views, ViewPager2 and Material Components.
+
+### 5. OYS Brainserve — Career Assessment Platform
+
+Description:
+
+A structured Android career-assessment platform that collects personal, educational, professional and career-related information using multi-step forms.
+
+Key features:
+
+* Personal information flow
+* Education and experience forms
+* Project information
+* Career goals
+* Assessment pagination
+* Form validation
+* AWS S3 file upload
+* Reusable form components
+
+Technologies:
+
+Kotlin, XML, RecyclerView, pagination, AWS S3 and Cognito.
+
+### 6. MNO — Multi-Role Vendor Platform
+
+Description:
+
+A multi-role Android platform developed for vendors, employees, third parties and customers.
+
+Key features:
+
+* OTP authentication
+* Device validation
+* Role-based workflows
+* Dynamic forms
+* Searchable bottom sheets
+* Multi-step registration
+* Product creation
+* Multiple image uploads
+* Maps and reverse geocoding
+* Product pagination
+* Profile management
+* Secure APIs
+
+Technologies:
+
+Kotlin, XML, Retrofit, Google Maps, image upload, RecyclerView and pagination.
+
+Each project card should support placeholders for:
+
+* Project screenshots
+* GitHub repository
+* Live demo or application link
+* Detailed case study
+
+Do not show a button when its corresponding link has not been provided.
+
+## Experience Section
+
+Add this professional experience:
+
+### Android Developer Trainee
+
+**AppSquadz Software Pvt. Ltd., Noida**
+**November 2025 – Present**
+
+Responsibilities and contributions:
+
+* Develop native Android applications using Kotlin and XML
+* Integrate secure REST APIs
+* Create reusable UI components
+* Implement multi-step application workflows
+* Work on customer, vendor and service-provider applications
+* Debug application crashes and lifecycle issues
+* Resolve Gradle and dependency problems
+* Integrate Firebase services
+* Implement analytics and event tracking
+* Optimize existing Android codebases
+* Participate in Git-based development workflows
+* Resolve merge conflicts and maintain stable application builds
+
+## Education Section
+
+Add:
+
+### Master of Computer Applications
+
+2023–2025
+
+### Bachelor of Science
+
+2020–2023
+
+Leave placeholders for the university or college names when they are not available.
+
+## Problem-Solving Section
+
+Create a section called “Problems I Solve” or “Engineering Highlights”.
+
+Include items such as:
+
+* Building complete Android applications from UI to API integration
+* Debugging lifecycle-related crashes
+* Fixing Fragment context and attachment issues
+* Resolving NullPointerException and XML inflation crashes
+* Handling complex encrypted API responses
+* Implementing Firebase and Meta analytics
+* Configuring debug and release analytics verification
+* Optimizing large Android codebases
+* Creating reusable UI components
+* Handling Play Store permission compliance
+* Developing dynamic forms and multi-step workflows
+
+Present these as real engineering capabilities rather than generic soft skills.
+
+## Contact Section
+
+Create an attractive contact section with:
+
+* Email - ujjwalandroiddev@gmail.com
+* LinkedIn - https://www.linkedin.com/in/ujjwalbansal1810
+* GitHub - https://github.com/UjjwalBansal2002/ujjwal-bansal
+* Phone number - 8445973574
+* Location - Noida Uttar Pradesh
+* Contact form
+
+Use placeholders wherever exact information is unavailable.
+
+The contact form should include:
+
+* Name
+* Email
+* Subject
+* Message
+* Submit button
+* Loading state
+* Success message
+* Error message
+* Client-side validation
+
+My existing backend uses Node.js, Express and Nodemailer. Preserve and improve this implementation.
+
+Secure all environment variables and never expose Gmail credentials or application passwords in frontend code.
+
+## Website Engineering Requirements
+
+* Preserve my existing working functionality
+* Write clean and maintainable code
+* Remove duplicate CSS and JavaScript
+* Use reusable components or clearly separated sections
+* Improve semantic HTML
+* Add accessibility labels
+* Add keyboard navigation
+* Maintain sufficient color contrast
+* Optimize images
+* Lazy-load project images
+* Avoid layout shifts
+* Add meaningful loading states
+* Optimize mobile navigation
+* Avoid unnecessary dependencies
+* Remove unused code
+* Add proper error handling
+* Ensure the contact form works on Vercel
+* Keep secrets inside environment variables
+* Make the design responsive for mobile, tablet and desktop
+
+## SEO Requirements
+
+Add:
+
+* Proper page title
+* Meta description
+* Open Graph metadata
+* Twitter/X card metadata
+* Favicon
+* Canonical URL
+* Structured data for a software developer
+* Descriptive image alt text
+* Sitemap
+* Robots.txt
+
+Target keywords naturally:
+
+* Ujjwal Bansal Android Developer
+* Kotlin Android Developer
+* Native Android Developer
+* Android Developer Portfolio
+* Android Developer in India
+* Firebase Android Developer
+* Mobile Application Developer
+
+Do not overuse keywords.
+
+## Performance Requirements
+
+Aim for strong Lighthouse scores.
+
+Optimize:
+
+* First Contentful Paint
+* Largest Contentful Paint
+* Cumulative Layout Shift
+* JavaScript bundle size
+* Image delivery
+* Font loading
+* CSS organization
+* Mobile responsiveness
+
+Use animations that are lightweight and respect the user’s reduced-motion preference.
+
+## Final Deliverables
+
+After reviewing the current codebase:
+
+1. Explain the major design and code problems.
+2. Propose an improved website structure.
+3. Redesign the complete portfolio.
+4. Refactor the HTML, CSS and JavaScript.
+5. Improve the Node.js and Express contact-form implementation when necessary.
+6. Make every section responsive.
+7. Add SEO and accessibility improvements.
+8. Remove unused and duplicate code.
+9. Test all navigation links and buttons.
+10. Ensure the portfolio can be deployed successfully on Vercel.
+
+Do not only provide suggestions. Generate the complete updated code for every modified file.
+
+Keep the content factual. Do not invent company names, client names, Play Store downloads, revenue, ratings, awards or other achievements that I have not provided.
