@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { Command, Menu, X, FileDown, Smartphone } from "lucide-react";
+import { Command, Menu, X, FileDown } from "lucide-react";
 
 interface NavbarProps {
   onOpenCommandPalette: () => void;
-  onOpenResumeModal: () => void;
+  onOpenResumeModal?: () => void;
 }
 
 export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: NavbarProps) {
@@ -56,7 +56,7 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
         <div className="flex items-center justify-between">
           
           {/* Logo & Brand Identity */}
-          <Link href="#hero" className="flex items-center gap-3 group">
+          <Link href="/#hero" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-400 via-teal-500 to-cyan-500 p-[1.5px] shadow-lg group-hover:shadow-emerald-500/25 transition-all">
               <div className="w-full h-full bg-[#050816] rounded-[10px] flex items-center justify-center font-bold text-lg text-emerald-400 font-mono group-hover:bg-[#0b0f29] transition-colors">
                 UB
@@ -98,35 +98,38 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
           <div className="hidden sm:flex items-center gap-3">
             {/* Command Palette Trigger */}
             <button
+              type="button"
               onClick={onOpenCommandPalette}
-              className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-300 bg-slate-900/80 border border-slate-700/60 rounded-lg hover:border-emerald-500/50 hover:text-white transition-all shadow-inner"
+              className="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-300 bg-slate-900/80 border border-slate-700/60 rounded-lg hover:border-emerald-500/50 hover:text-white transition-all shadow-inner cursor-pointer active:scale-95"
               title="Open Command Palette (Ctrl+K)"
             >
               <Command className="w-3.5 h-3.5 text-emerald-400" />
               <span className="font-mono text-[11px] text-slate-400">Ctrl K</span>
             </button>
 
-            {/* Resume Trigger */}
-            <button
-              onClick={onOpenResumeModal}
-              className="flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg shadow-lg shadow-emerald-500/15 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            {/* Direct Resume Page Link */}
+            <Link
+              href="/resume"
+              className="flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg shadow-lg shadow-emerald-500/15 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
             >
               <FileDown className="w-4 h-4 text-slate-950" />
               Resume
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center gap-2">
             <button
+              type="button"
               onClick={onOpenCommandPalette}
-              className="p-2 text-slate-300 bg-slate-900 border border-slate-800 rounded-lg"
+              className="p-2 text-slate-300 bg-slate-900 border border-slate-800 rounded-lg cursor-pointer"
             >
               <Command className="w-4 h-4 text-emerald-400" />
             </button>
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-lg"
+              className="p-2 text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-lg cursor-pointer"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -150,15 +153,13 @@ export default function Navbar({ onOpenCommandPalette, onOpenResumeModal }: Navb
               </Link>
             ))}
             <div className="flex flex-col gap-2 pt-4">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenResumeModal();
-                }}
-                className="w-full py-2.5 text-xs font-mono font-bold text-center text-slate-950 bg-emerald-400 rounded-lg shadow-md"
+              <Link
+                href="/resume"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-2.5 text-xs font-mono font-bold text-center text-slate-950 bg-emerald-400 rounded-lg shadow-md block cursor-pointer active:scale-95"
               >
-                Download Resume
-              </button>
+                View & Download Resume
+              </Link>
             </div>
           </div>
         </div>

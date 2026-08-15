@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { ArrowUp, Mail, Smartphone, Code2 } from "lucide-react";
+import { ArrowUp, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Footer() {
@@ -82,8 +82,9 @@ export default function Footer() {
           {/* Back to Top */}
           <div className="md:col-span-3 space-y-4 flex flex-col justify-between items-start md:items-end">
             <button
+              type="button"
               onClick={scrollToTop}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300 hover:text-white hover:border-emerald-500 transition-all shadow-md"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300 hover:text-white hover:border-emerald-500 transition-all shadow-md cursor-pointer"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-4 h-4 text-emerald-400" />
@@ -98,7 +99,7 @@ export default function Footer() {
 
         {/* Bottom Rights Notice */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-slate-500 space-y-2 sm:space-y-0">
-          <p>© {new Date().getFullYear()} Ujjwal Bansal. All rights reserved.</p>
+          <p>© <span suppressHydrationWarning>2026</span> Ujjwal Bansal. All rights reserved.</p>
           <p>Built with Next.js, TypeScript & Tailwind CSS</p>
         </div>
 

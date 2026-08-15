@@ -57,7 +57,7 @@ export const PERSONAL_INFO = {
   secondaryEmail: "ujjwalandroiddev@gmail.com",
   phone: "8445973574",
   phoneFormatted: "+91 8445973574",
-  github: "https://github.com/UjjwalBansal2002/ujjwal-bansal",
+  github: "https://github.com/UjjwalBansal2002",
   linkedin: "https://www.linkedin.com/in/ujjwalbansal1810",
   siteUrl: "https://ujjwalbansaldev.vercel.app",
   availabilityStatus: "Available for Android Developer Opportunities",

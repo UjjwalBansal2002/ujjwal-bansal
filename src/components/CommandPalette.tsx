@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { PROJECTS_DATA, PERSONAL_INFO } from "@/data/portfolioData";
-import { Search, X, FolderGit2, User, Send, FileDown, Sparkles, Command } from "lucide-react";
+import { PROJECTS_DATA } from "@/data/portfolioData";
+import { Search, X, FolderGit2, User, Send, FileDown } from "lucide-react";
 
 interface CommandPaletteProps {
   isOpen: boolean;
@@ -46,8 +46,13 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-slate-950/80 backdrop-blur-xl animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden space-y-4 p-4 sm:p-6">
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      className="fixed inset-0 z-[999999] flex items-start justify-center pt-20 px-4 bg-slate-950/80 backdrop-blur-xl animate-fadeIn"
+    >
+      <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-hidden space-y-4 p-4 sm:p-6 text-slate-100">
         
         {/* Search Bar Input */}
         <div className="relative flex items-center border-b border-slate-800 pb-3">
@@ -60,7 +65,11 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
             placeholder="Search projects, technologies, or type a command..."
             className="w-full px-3 py-2 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none font-mono"
           />
-          <button onClick={onClose} className="p-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white">
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 cursor-pointer transition-colors"
+          >
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -90,8 +99,9 @@ export default function CommandPalette({ isOpen, onClose, onOpenResumeModal }: C
                   return (
                     <button
                       key={idx}
+                      type="button"
                       onClick={act.action}
-                      className="p-3 rounded-xl bg-slate-950 border border-slate-800/80 hover:border-emerald-500/50 flex items-center gap-3 text-xs font-mono text-slate-200 transition-colors text-left"
+                      className="p-3 rounded-xl bg-slate-950 border border-slate-800/80 hover:border-emerald-500/50 flex items-center gap-3 text-xs font-mono text-slate-200 transition-colors text-left cursor-pointer"
                     >
                       <Icon className="w-4 h-4 text-emerald-400" />
                       <span>{act.title}</span>

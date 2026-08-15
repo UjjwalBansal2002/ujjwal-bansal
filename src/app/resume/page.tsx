@@ -1,78 +1,39 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { X, Printer, Mail, Phone, MapPin, Download } from "lucide-react";
+import { Printer, Mail, Phone, MapPin, ArrowLeft } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
-interface ResumeModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen, onClose]);
-
-  if (!isOpen) return null;
-
-  const handlePrint = (e: React.MouseEvent) => {
-    e.stopPropagation();
+export default function ResumePage() {
+  const handlePrint = () => {
     window.print();
   };
 
   return (
-    <div
-      id="resume-modal-overlay"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto"
-    >
-      <div
-        id="resume-modal-card"
-        className="relative w-full max-w-4xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl overflow-y-auto my-auto space-y-6 text-slate-100"
-      >
-        {/* Modal Controls (Hidden in Print) */}
-        <div className="flex justify-between items-center pb-4 border-b border-slate-800 print:hidden">
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={handlePrint}
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold font-mono text-slate-950 bg-emerald-400 rounded-xl hover:bg-emerald-300 transition-all shadow-md cursor-pointer active:scale-95"
-            >
-              <Printer className="w-4 h-4" />
-              <span>Print / Save as PDF (1-2 Pages)</span>
-            </button>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="p-2 rounded-full bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 cursor-pointer transition-colors"
-            title="Close modal (Esc)"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
+    <main className="min-h-screen bg-[#050816] text-slate-100 py-10 px-4 sm:px-6 lg:px-8">
+      {/* Controls Bar (Hidden in Print) */}
+      <div className="max-w-4xl mx-auto mb-6 flex justify-between items-center print:hidden">
+        <Link
+          href="/"
+          className="flex items-center gap-2 px-4 py-2 text-xs font-mono text-slate-300 bg-slate-900 border border-slate-800 rounded-xl hover:text-white hover:border-emerald-500/50 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Portfolio</span>
+        </Link>
+        <button
+          type="button"
+          onClick={handlePrint}
+          className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold font-mono text-slate-950 bg-emerald-400 rounded-xl hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 cursor-pointer active:scale-95"
+        >
+          <Printer className="w-4 h-4" />
+          <span>Print / Save as PDF</span>
+        </button>
+      </div>
 
-        {/* Printable Resume Document */}
+      {/* Resume Container */}
+      <div className="max-w-4xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
         <div
           id="printable-resume"
           className="bg-slate-950 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 font-sans text-slate-200"
@@ -276,6 +237,6 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

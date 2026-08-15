@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { ArrowRight, Download, Mail, Sparkles, Smartphone, Code2, Layers, ShieldCheck, Terminal, Cpu } from "lucide-react";
+import { ArrowRight, Download, Mail, Smartphone, Code2, Layers, ShieldCheck, Terminal, Cpu } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 interface HeroProps {
-  onOpenResumeModal: () => void;
+  onOpenResumeModal?: () => void;
 }
 
 export default function Hero({ onOpenResumeModal }: HeroProps) {
@@ -68,25 +69,25 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               {/* Button 1: View My Projects */}
               <a
                 href="#projects"
-                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-300 hover:from-emerald-300 hover:to-teal-200 shadow-lg shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-300 hover:from-emerald-300 hover:to-teal-200 shadow-lg shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 cursor-pointer"
               >
                 <span>View My Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              {/* Button 2: Download Resume */}
-              <button
-                onClick={onOpenResumeModal}
-                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-white bg-slate-900 border border-purple-500/40 hover:bg-slate-800 hover:border-purple-400 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+              {/* Button 2: View / Download Resume (Direct Reliable Link) */}
+              <Link
+                href="/resume"
+                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-white bg-slate-900 border border-purple-500/40 hover:bg-slate-800 hover:border-purple-400 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Download className="w-4 h-4 text-purple-400" />
-                <span>Download Resume</span>
-              </button>
+                <span>View & Download Resume</span>
+              </Link>
 
               {/* Button 3: Contact Me */}
               <a
                 href="#contact"
-                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-white bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-white bg-slate-900 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Mail className="w-4 h-4 text-cyan-400" />
                 <span>Contact Me</span>
@@ -97,7 +98,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-slate-300 bg-slate-950 border border-slate-800 hover:text-white hover:border-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl font-mono text-xs font-bold text-slate-300 bg-slate-950 border border-slate-800 hover:text-white hover:border-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 cursor-pointer"
               >
                 <FaGithub className="w-4 h-4 text-white" />
                 <span>View GitHub</span>

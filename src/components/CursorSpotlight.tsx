@@ -26,19 +26,17 @@ export default function CursorSpotlight() {
   }, [isVisible]);
 
   return (
-    <>
+    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10 select-none">
       {/* Background Floating Blobs */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }} />
-        <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "4s" }} />
-        <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-      </div>
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse-slow" />
+      <div className="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }} />
+      <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "4s" }} />
+      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
 
       {/* Dynamic Mouse Spotlight Light */}
       {isVisible && (
         <div
-          className="fixed pointer-events-none z-10 transition-opacity duration-300"
+          className="fixed pointer-events-none transition-opacity duration-300 -z-10"
           style={{
             left: `${mousePosition.x}px`,
             top: `${mousePosition.y}px`,
@@ -49,6 +47,6 @@ export default function CursorSpotlight() {
           }}
         />
       )}
-    </>
+    </div>
   );
 }
