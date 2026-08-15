@@ -60,10 +60,17 @@ export const PERSONAL_INFO = {
   github: "https://github.com/UjjwalBansal2002",
   linkedin: "https://www.linkedin.com/in/ujjwalbansal1810",
   siteUrl: "https://ujjwalbansaldev.vercel.app",
+  resumeDriveUrl: "https://drive.google.com/file/d/15Gumb9ZoNIdgEov1KWEny5hCzHntqfjl/view?usp=drive_link",
+  resumeDownloadUrl: "https://drive.google.com/uc?export=download&id=15Gumb9ZoNIdgEov1KWEny5hCzHntqfjl",
   availabilityStatus: "Available for Android Developer Opportunities",
   headline: "I build secure, scalable and user-focused Android applications using Kotlin, modern Android architecture and production-ready integrations.",
   summary: `Android Developer with 1 year of hands-on experience developing and maintaining production Android applications using Kotlin, XML, and MVVM architecture. Experienced in REST API integration, Firebase Analytics, Meta SDK integration, payment workflows, reusable UI development, and third-party SDK integration (Digio, Google Maps, Glide, Android Image Cropper). Strong expertise in debugging production issues, optimizing application performance, refactoring large codebases, and building scalable modular applications following clean code practices.`,
   aboutBio: `Native Android Developer with hands-on experience building Android applications using Kotlin, XML, REST APIs, Firebase and modern Android development practices. Experience working on astrology applications, AI chat experiences, multi-role platforms, career-assessment systems, vendor applications, customer applications and astrologer platforms. Focused on converting complex UI designs into responsive Android layouts, writing reusable components, handling encrypted API payloads, and optimizing app performance for production release.`
+};
+
+export const RESUME_URLS = {
+  view: "https://drive.google.com/file/d/15Gumb9ZoNIdgEov1KWEny5hCzHntqfjl/view?usp=drive_link",
+  download: "https://drive.google.com/uc?export=download&id=15Gumb9ZoNIdgEov1KWEny5hCzHntqfjl",
 };
 
 export const SKILL_GROUPS: SkillCategory[] = [

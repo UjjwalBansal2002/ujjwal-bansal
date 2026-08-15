@@ -12,6 +12,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CommandPalette from "@/components/CommandPalette";
 import ResumeModal from "@/components/ResumeModal";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
@@ -61,6 +62,9 @@ export default function Home() {
         isOpen={resumeModalOpen}
         onClose={() => setResumeModalOpen(false)}
       />
+
+      {/* Floating Back to Top Button */}
+      <ScrollToTop />
     </main>
   );
 }

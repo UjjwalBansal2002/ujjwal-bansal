@@ -1,35 +1,48 @@
 "use client";
 
-import { useEffect } from "react";
 import Link from "next/link";
-import { PERSONAL_INFO } from "@/data/portfolioData";
-import { Printer, Mail, Phone, MapPin, ArrowLeft } from "lucide-react";
+import { PERSONAL_INFO, RESUME_URLS } from "@/data/portfolioData";
+import { Mail, Phone, MapPin, ArrowLeft, Download, ExternalLink } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function ResumePage() {
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <main className="min-h-screen bg-[#050816] text-slate-100 py-10 px-4 sm:px-6 lg:px-8">
       {/* Controls Bar (Hidden in Print) */}
-      <div className="max-w-4xl mx-auto mb-6 flex justify-between items-center print:hidden">
+      <div className="max-w-4xl mx-auto mb-6 flex flex-wrap justify-between items-center gap-4 print:hidden">
         <Link
           href="/"
-          className="flex items-center gap-2 px-4 py-2 text-xs font-mono text-slate-300 bg-slate-900 border border-slate-800 rounded-xl hover:text-white hover:border-emerald-500/50 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 text-xs font-mono text-slate-300 bg-slate-900 border border-slate-800 rounded-xl hover:text-white hover:border-emerald-500/50 transition-colors shadow-sm cursor-pointer"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4 text-emerald-400" />
           <span>Back to Portfolio</span>
         </Link>
-        <button
-          type="button"
-          onClick={handlePrint}
-          className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold font-mono text-slate-950 bg-emerald-400 rounded-xl hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 cursor-pointer active:scale-95"
-        >
-          <Printer className="w-4 h-4" />
-          <span>Print / Save as PDF</span>
-        </button>
+
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Show Resume Button */}
+          <a
+            href={RESUME_URLS.view}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold font-mono text-slate-950 bg-emerald-400 rounded-xl hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 active:scale-95 cursor-pointer text-decoration-none"
+            title="Show Resume on Google Drive"
+          >
+            <ExternalLink className="w-4 h-4 text-slate-950" />
+            <span>Show Resume</span>
+          </a>
+
+          {/* Download Resume Button */}
+          <a
+            href={RESUME_URLS.download}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold font-mono text-white bg-slate-900 border border-slate-700 rounded-xl hover:bg-slate-800 hover:border-slate-600 transition-all shadow-lg active:scale-95 cursor-pointer text-decoration-none"
+            title="Download Resume from Google Drive"
+          >
+            <Download className="w-4 h-4 text-emerald-400" />
+            <span>Download Resume</span>
+          </a>
+        </div>
       </div>
 
       {/* Resume Container */}

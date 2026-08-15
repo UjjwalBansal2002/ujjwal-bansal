@@ -6,8 +6,26 @@ import { ArrowUp, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (typeof window !== "undefined") {
+      try {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      } catch {
+        window.scrollTo(0, 0);
+      }
+      if (document.documentElement) {
+        try {
+          document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        } catch {
+          document.documentElement.scrollTop = 0;
+        }
+      }
+      if (document.body) {
+        document.body.scrollTop = 0;
+      }
+    }
   };
 
   return (

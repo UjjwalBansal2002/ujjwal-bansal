@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { PERSONAL_INFO } from "@/data/portfolioData";
-import { X, Printer, Mail, Phone, MapPin, Download } from "lucide-react";
+import { PERSONAL_INFO, RESUME_URLS } from "@/data/portfolioData";
+import { X, Mail, Phone, MapPin, Download, ExternalLink } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 interface ResumeModalProps {
@@ -33,11 +33,6 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
   if (!isOpen) return null;
 
-  const handlePrint = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    window.print();
-  };
-
   return (
     <div
       id="resume-modal-overlay"
@@ -51,16 +46,31 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
         className="relative w-full max-w-4xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl overflow-y-auto my-auto space-y-6 text-slate-100"
       >
         {/* Modal Controls (Hidden in Print) */}
-        <div className="flex justify-between items-center pb-4 border-b border-slate-800 print:hidden">
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={handlePrint}
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold font-mono text-slate-950 bg-emerald-400 rounded-xl hover:bg-emerald-300 transition-all shadow-md cursor-pointer active:scale-95"
+        <div className="flex flex-wrap justify-between items-center gap-3 pb-4 border-b border-slate-800 print:hidden">
+          <div className="flex flex-wrap items-center gap-2.5">
+            {/* Show Resume Button */}
+            <a
+              href={RESUME_URLS.view}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 text-xs font-bold font-mono text-slate-950 bg-emerald-400 rounded-xl hover:bg-emerald-300 transition-all shadow-md cursor-pointer active:scale-95 text-decoration-none"
+              title="Show Resume on Google Drive"
             >
-              <Printer className="w-4 h-4" />
-              <span>Print / Save as PDF (1-2 Pages)</span>
-            </button>
+              <ExternalLink className="w-4 h-4 text-slate-950" />
+              <span>Show Resume</span>
+            </a>
+
+            {/* Download Resume Button */}
+            <a
+              href={RESUME_URLS.download}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 text-xs font-bold font-mono text-white bg-slate-800 border border-slate-700 rounded-xl hover:bg-slate-700 hover:border-slate-600 transition-all shadow-md cursor-pointer active:scale-95 text-decoration-none"
+              title="Download Resume from Google Drive"
+            >
+              <Download className="w-4 h-4 text-emerald-400" />
+              <span>Download Resume</span>
+            </a>
           </div>
           <button
             type="button"
